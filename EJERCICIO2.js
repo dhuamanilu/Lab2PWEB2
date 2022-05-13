@@ -1,6 +1,7 @@
 
 //PROPUESTO1 
 function queDiaEs(numero){
+
 	numero%=7;
 	if(numero==0){
 		return "Domingo"

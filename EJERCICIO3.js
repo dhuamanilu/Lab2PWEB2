@@ -1,54 +1,35 @@
 
-//PROPUESTO1 
-function queDiaEs(numero){
-	numero%=7;
-	if(numero==0){
-		return "Domingo"
-	}
-	else if(numero==1){
-		return "Lunes"
-	}
-	else if(numero==2){
-		return "Martes"
-	}
-	else if(numero==3){
-		return "Miercoles"
-	}
-	else if(numero==4){
-		return "Jueves"
-	}
-	else if(numero==5){
-		return "Viernes"
-	}
-	else if(numero==6){
-		return "Sabado"
-	}
-}
- //PROPUESTO2
+ //PROPUESTO3
 document.addEventListener('DOMContentLoaded',function(){
-	const texto=document.querySelector("#texto");
-	const button=document.querySelector("#enviar");
-	button.disabled=true;
-	texto.onkeyup=()=> {
-		if(texto.value.length>0){
-			button.disabled=false;
-		}
-		else{
-			button.disabled=true;
-		}
+	let x =new Date();
 
-	};
-	function invertir(str){
- 		let rpta="";
- 		for(let x=str.length;x>=0;x--){
- 			rpta+=str.substring(x,x-1);
- 		}
- 		return rpta;
- 	}
-	document.querySelector("#form1").onsubmit=()=>{
-		document.getElementById("resultado").innerHTML=invertir(texto.value);
-		return false;
-	};
+	let dia=x.getDay();
+	let mes=x.getMonth();
+	let año=x.getYear();
+	let rpta=0;
+	let diffAño,diffMes;
+	if((mes%2==1 && mes<=7) || (mes>=8 && mes%2==0)){
+		dia+=Math.abs(31-dia);
+	}
+	else if(mes<= 6 && mes%2==0 ){
+		dia+=Math.abs(30-dia);
+	}
+	while(true){
+
+	}
+
+
+	if(año%4==0 && año%100!=0  || (año%400==0)){
+		if(mes<=2){
+			rpta++;	
+		}
+		diffAño=Math.abs(2022-año);
+	}
+
+
+	document.getElementById("resultado").innerHTML="FALTAN MUCHOS DIAS";
+	return false;	
 });
+
 
  
