@@ -16,19 +16,19 @@ document.addEventListener('DOMContentLoaded',function(){
 
 	};
 	document.querySelector("#form1").onsubmit=()=>{
-		console.log("este es el valor: "+num.value);
+		console.log(parseInt(num.value)+"<**** era el value de nuim");
 		let body = document.getElementsByTagName("body")[0];
 		let tabla = document.createElement("table");
 		let tblBody = document.createElement("tbody");
 		
-		let arr = new Array(10);
+		let arr = new Array(parseInt(num.value));
 		for (let i=0;i<arr.length;i++) {
-		  arr[i]= new Array(10);
+		  arr[i]= new Array(parseInt(num.value));
 		}
 
-		for (let i=0;i<10;i++) {
+		for (let i=0;i<parseInt(num.value);i++) {
 	  		let fila=document.createElement("tr");
-	  		for(let j = 0;j<10;j++) {
+	  		for(let j = 0;j<parseInt(num.value);j++) {
 	    		let celda = document.createElement("td");
 	    		let numero=Math.floor(Math.random()*100+1);
 	    		let textoCelda = document.createTextNode(numero);
@@ -49,16 +49,24 @@ document.addEventListener('DOMContentLoaded',function(){
 		const boton = document.createElement('button'); 
 		boton.type = 'button'; 
 		boton.innerText = 'Haz Click para calcular la suma de los elementos'; 
+
 		result.appendChild(boton);
+		boton.onclick = function() {  
+			let suma=0;
+			for (let i=0;i<parseInt(num.value);i++) {
+  				for(let j = 0;j<parseInt(num.value);j++) {
+    				suma+=arr[i][j];		
+    			}
+  			}
+  			console.log(suma);
+  			const textito=document.createElement("p");
+  			let contenido=document.createTextNode("La suma es : "+suma);
+  			textito.appendChild(contenido);
+  			result.appendChild(textito);
+		};
 
-
-		let suma=0;
-		for (let i=0;i<10;i++) {
-	  		for(let j = 0;j<10;j++) {
-	    		suma+=arr[i][j];		
-	    	}
-	  	}
-	  	console.log(suma);
+  		
+	  	
 		return false;
 	}	
 });
