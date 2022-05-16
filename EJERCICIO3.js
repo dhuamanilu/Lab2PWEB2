@@ -6,11 +6,7 @@ document.addEventListener('DOMContentLoaded',function(){
 	let diff=Daqp-x;
 	diff/=1000*60*60*24;
 
-
-	
-
-
-	document.getElementById("resultado").innerHTML="FALTAN : "+diff+" días";
+	document.getElementById("resultado").innerHTML="Faltan : "+Math.floor(diff)+" días para el dia de Arequipa";
 	return false;	
 });
 
