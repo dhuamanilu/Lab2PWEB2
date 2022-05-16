@@ -1,7 +1,9 @@
 
 //PROPUESTO1 
-function queDiaEs(numero){
-
+function queDiaEs(){
+	let fecha=new Date();
+	let numero=fecha.getDay();
+	console.log(numero);
 	numero%=7;
 	if(numero==0){
 		return "Domingo"

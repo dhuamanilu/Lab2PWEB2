@@ -56,7 +56,7 @@ function queDiaEs(numero){
 	}
 }
  //PROPUESTO2
-document.addEventListener('DOMContentLoaded',function(){
+/*document.addEventListener('DOMContentLoaded',function(){
 	const texto=document.querySelector("#text");
 	const button=document.querySelector("#enviar");
 	button.disabled=true;
@@ -80,6 +80,6 @@ document.addEventListener('DOMContentLoaded',function(){
 		document.getElementById("resultado").innerHTML=invertir(texto.value);
 		return false;
 	};
-});
+});*/
 
  
