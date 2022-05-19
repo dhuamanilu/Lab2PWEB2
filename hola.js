@@ -1,1 +1,0 @@
-document.getElementById("Resultadosuma").innerHTML=1+2;
